@@ -32,7 +32,7 @@ function continueRelease() {
   try {
     // Try to commit package.json changes if any
     try {
-      execSync('git add . 2>/dev/null || true', { stdio: 'pipe' });
+      execSync('git add package.json README.md 2>/dev/null || true', { stdio: 'pipe' });
       execSync(`git commit -m "chore: bump version to v${version}"`, { stdio: 'inherit' });
     } catch (commitError) {
       // No changes to commit is fine, we'll just tag
