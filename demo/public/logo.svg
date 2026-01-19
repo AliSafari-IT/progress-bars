@@ -1,0 +1,93 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      :root {
+        --logo-primary: var(--asm-color-brand-primary-600, #0066cc);
+        --logo-success: var(--asm-color-success-600, #28a745);
+        --logo-warning: var(--asm-color-warning-600, #ffc107);
+        --logo-danger: var(--asm-color-danger-600, #dc3545);
+        --logo-bg: var(--asm-color-surface-muted, #e0e0e0);
+      }
+      
+      .logo-bg { fill: var(--logo-bg); }
+      .logo-track { fill: none; stroke: var(--logo-bg); stroke-width: 3; }
+      .logo-progress-1 { fill: none; stroke: var(--logo-primary); stroke-width: 3; stroke-linecap: round; }
+      .logo-progress-2 { fill: none; stroke: var(--logo-success); stroke-width: 3; stroke-linecap: round; }
+      .logo-progress-3 { fill: none; stroke: var(--logo-warning); stroke-width: 3; stroke-linecap: round; }
+      .logo-progress-4 { fill: none; stroke: var(--logo-danger); stroke-width: 3; stroke-linecap: round; }
+      
+      @keyframes progress-fill-1 {
+        0% { stroke-dashoffset: 50; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes progress-fill-2 {
+        0% { stroke-dashoffset: 50; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes progress-fill-3 {
+        0% { stroke-dashoffset: 50; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes progress-fill-4 {
+        0% { stroke-dashoffset: 50; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      .logo-progress-1 { animation: progress-fill-1 2s ease-in-out infinite; }
+      .logo-progress-2 { animation: progress-fill-2 2.2s ease-in-out infinite 0.2s; }
+      .logo-progress-3 { animation: progress-fill-3 2.4s ease-in-out infinite 0.4s; }
+      .logo-progress-4 { animation: progress-fill-4 2.6s ease-in-out infinite 0.6s; }
+    </style>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" class="logo-bg" opacity="0.1"/>
+  
+  <!-- Concentric progress rings -->
+  <!-- Ring 1 - Blue -->
+  <circle cx="100" cy="100" r="30" class="logo-track"/>
+  <circle 
+    cx="100" 
+    cy="100" 
+    r="30" 
+    class="logo-progress-1"
+    stroke-dasharray="50 188.4"
+    transform="rotate(-90 100 100)"
+  />
+  
+  <!-- Ring 2 - Green -->
+  <circle cx="100" cy="100" r="50" class="logo-track"/>
+  <circle 
+    cx="100" 
+    cy="100" 
+    r="50" 
+    class="logo-progress-2"
+    stroke-dasharray="50 264"
+    transform="rotate(-90 100 100)"
+  />
+  
+  <!-- Ring 3 - Yellow -->
+  <circle cx="100" cy="100" r="70" class="logo-track"/>
+  <circle 
+    cx="100" 
+    cy="100" 
+    r="70" 
+    class="logo-progress-3"
+    stroke-dasharray="50 439.8"
+    transform="rotate(-90 100 100)"
+  />
+  
+  <!-- Ring 4 - Red -->
+  <circle cx="100" cy="100" r="90" class="logo-track"/>
+  <circle 
+    cx="100" 
+    cy="100" 
+    r="90" 
+    class="logo-progress-4"
+    stroke-dasharray="50 565.2"
+    transform="rotate(-90 100 100)"
+  />
+  
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="8" fill="var(--logo-primary)"/>
+</svg>

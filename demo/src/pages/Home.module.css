@@ -1,0 +1,74 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-8, 2.5rem);
+}
+
+.header {
+  text-align: center;
+  padding-block: var(--asm-space-8, 2.5rem);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-block-end: var(--asm-space-2, 0.5rem);
+  color: var(--asm-color-text-primary, #000);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--asm-color-text-secondary, #666);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-4, 1rem);
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--asm-color-text-primary, #000);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--asm-space-4, 1rem);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-block-end: var(--asm-space-2, 0.5rem);
+  color: var(--asm-color-text-primary, #000);
+}
+
+.cardText {
+  color: var(--asm-color-text-secondary, #666);
+  margin-block-end: var(--asm-space-3, 0.75rem);
+  line-height: 1.6;
+}
+
+.link {
+  color: var(--asm-color-brand-primary-600, #0066cc);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--asm-space-1, 0.25rem);
+  transition: color var(--asm-motion-duration-fast, 150ms) ease;
+}
+
+.link:hover {
+  color: var(--asm-color-brand-primary-700, #0052a3);
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--asm-color-focus-ring, var(--asm-color-brand-primary-600, #0066cc));
+  outline-offset: 2px;
+  border-radius: var(--asm-radius-sm, 0.25rem);
+}

@@ -1,0 +1,62 @@
+.legend {
+  display: flex;
+  gap: var(--asm-space-4);
+}
+
+.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--asm-space-2);
+}
+
+.swatch {
+  width: var(--asm-icon-size-sm);
+  height: var(--asm-icon-size-sm);
+  border-radius: var(--asm-radius-sm);
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: var(--asm-font-size-sm);
+  color: var(--asm-color-text);
+}
+
+.value {
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text-muted);
+  margin-inline-start: auto;
+}
+
+.brand {
+  background-color: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  background-color: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  background-color: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  background-color: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  background-color: var(--asm-color-text, #111827);
+}
+
+.info {
+  background-color: var(--asm-color-info-700, #0369a1);
+}

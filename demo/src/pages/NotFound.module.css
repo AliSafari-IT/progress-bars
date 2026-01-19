@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.content {
+  text-align: center;
+  padding-block: var(--asm-space-8, 2.5rem);
+  padding-inline: var(--asm-space-6, 2rem);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--asm-color-text-primary, #000);
+  margin-block-end: var(--asm-space-2, 0.5rem);
+}
+
+.text {
+  font-size: 1.25rem;
+  color: var(--asm-color-text-secondary, #666);
+  margin-block-end: var(--asm-space-4, 1rem);
+}
+
+.link {
+  color: var(--asm-color-brand-primary-600, #0066cc);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color var(--asm-motion-duration-fast, 150ms) ease;
+}
+
+.link:hover {
+  color: var(--asm-color-brand-primary-700, #0052a3);
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--asm-color-focus-ring, var(--asm-color-brand-primary-600, #0066cc));
+  outline-offset: 2px;
+  border-radius: var(--asm-radius-sm, 0.25rem);
+}

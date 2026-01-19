@@ -1,0 +1,129 @@
+.root {
+  --lp-radius: var(--asm-radius-full);
+  --lp-duration: var(--asm-motion-duration-normal);
+  --lp-ease: var(--asm-motion-easing-standard);
+
+  --lp-track-bg: var(--asm-color-surface-muted);
+  --lp-track-border: var(--asm-color-border);
+  --lp-fill-bg: var(--asm-color-brand-primary-700);
+
+  display: inline-flex;
+  width: 100%;
+}
+
+.brand {
+  --lp-fill-bg: var(--asm-color-brand-primary-700);
+}
+
+.success {
+  --lp-fill-bg: var(--asm-color-success-700);
+}
+
+.warning {
+  --lp-fill-bg: var(--asm-color-warning-700);
+}
+
+.danger {
+  --lp-fill-bg: var(--asm-color-danger-700);
+}
+
+.neutral {
+  --lp-fill-bg: var(--asm-color-text);
+}
+
+.info {
+  --lp-fill-bg: var(--asm-color-info-700);
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  border-radius: var(--lp-radius);
+  background: var(--lp-track-bg);
+  box-shadow: inset 0 0 0 var(--asm-border-hairline) var(--lp-track-border);
+}
+
+/* Heights by size (spacing tokens only) */
+.size_sm .track {
+  block-size: var(--asm-space-1); /* 4px */
+}
+
+.size_md .track {
+  block-size: var(--asm-space-2); /* 8px */
+}
+
+.size_lg .track {
+  block-size: var(--asm-space-3); /* 12px */
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-radius: var(--lp-radius);
+  background: var(--lp-fill-bg);
+
+  transition:
+    width var(--lp-duration) var(--lp-ease),
+    background-color var(--lp-duration) var(--lp-ease);
+}
+
+.striped .bar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.15) 10px,
+    rgba(255, 255, 255, 0.15) 20px
+  );
+  background-size: 40px 40px;
+}
+
+.animated .bar {
+  animation: stripe-move 1s linear infinite;
+}
+
+@keyframes stripe-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+.variant_indeterminate .bar {
+  width: 40%;
+  left: -40%;
+  transition: none;
+  animation: lp-indeterminate var(--asm-motion-duration-slow, 320ms) var(--asm-motion-easing-standard) infinite;
+}
+
+@keyframes lp-indeterminate {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+
+  .animated .bar {
+    animation: none;
+  }
+
+  .variant_indeterminate .bar {
+    animation: none;
+    left: 0;
+    width: 50%;
+  }
+}

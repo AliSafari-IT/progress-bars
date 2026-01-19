@@ -1,0 +1,104 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-8, 2.5rem);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--asm-color-text-primary, #000);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-4, 1rem);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--asm-color-text-primary, #000);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--asm-space-4, 1rem);
+}
+
+.slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--asm-space-3, 0.75rem);
+  padding-block: var(--asm-space-4, 1rem);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--asm-space-4, 1rem);
+  flex-wrap: wrap;
+  padding-block: var(--asm-space-4, 1rem);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-3, 0.75rem);
+}
+
+.buttonRow {
+  display: flex;
+  gap: var(--asm-space-2, 0.5rem);
+  justify-content: center;
+  margin-block-start: var(--asm-space-2, 0.5rem);
+}
+
+.button {
+  padding-block: var(--asm-space-2, 0.5rem);
+  padding-inline: var(--asm-space-4, 1rem);
+  background-color: var(--asm-color-brand-primary-600, #0066cc);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--asm-radius-md, 0.375rem);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--asm-motion-duration-fast, 150ms) ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--asm-color-brand-primary-700, #0052a3);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text {
+  font-size: 0.875rem;
+  color: var(--asm-color-text-secondary, #666);
+  text-align: center;
+}
+
+.viewCodeButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: var(--asm-space-2);
+}
+
+.viewCodeButton:hover {
+  opacity: 0.8;
+}

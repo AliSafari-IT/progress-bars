@@ -1,0 +1,26 @@
+.inline {
+  background-color: var(--asm-color-surface-muted);
+  padding-block: var(--asm-space-1);
+  padding-inline: var(--asm-space-1);
+  border-radius: var(--asm-radius-sm);
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-sm);
+  color: var(--asm-color-text);
+}
+
+.pre {
+  background-color: var(--asm-color-surface-muted);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  border-radius: var(--asm-radius-md);
+  padding-block: var(--asm-space-3);
+  padding-inline: var(--asm-space-4);
+  overflow-x: auto;
+  margin-block: var(--asm-space-2);
+}
+
+.code {
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-sm);
+  line-height: var(--asm-line-height-normal);
+  color: var(--asm-color-text);
+}

@@ -1,0 +1,103 @@
+.tokens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-6);
+}
+
+.title {
+  font-size: var(--asm-font-size-4xl);
+  font-weight: var(--asm-font-weight-700);
+  color: var(--asm-color-text);
+}
+
+.subtitle {
+  font-size: var(--asm-font-size-lg);
+  color: var(--asm-color-text-muted);
+  margin-block-start: var(--asm-space-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--asm-space-4);
+}
+
+.groupTitle {
+  font-size: var(--asm-font-size-lg);
+  font-weight: var(--asm-font-weight-600);
+  margin-block-end: var(--asm-space-3);
+  color: var(--asm-color-text);
+}
+
+.tokenList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-2);
+}
+
+.tokenItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--asm-space-2);
+  padding-inline: var(--asm-space-3);
+  background-color: var(--asm-color-surface-muted);
+  border-radius: var(--asm-radius-sm);
+  gap: var(--asm-space-2);
+  flex-wrap: wrap;
+}
+
+.tokenName {
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-xs);
+  color: var(--asm-color-primary-600);
+  word-break: break-all;
+}
+
+.tokenValue {
+  display: flex;
+  align-items: center;
+  gap: var(--asm-space-2);
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-xs);
+  color: var(--asm-color-text-muted);
+}
+
+.colorSwatch {
+  width: var(--asm-icon-size-lg);
+  height: var(--asm-icon-size-lg);
+  border-radius: var(--asm-radius-sm);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  flex-shrink: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-3);
+}
+
+.sectionTitle {
+  font-size: var(--asm-font-size-2xl);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+}
+
+.text {
+  color: var(--asm-color-text-muted);
+  line-height: var(--asm-line-height-relaxed);
+  margin-block-end: var(--asm-space-3);
+}
+
+.codeBlock {
+  background-color: var(--asm-color-surface-muted);
+  padding-block: var(--asm-space-3);
+  padding-inline: var(--asm-space-4);
+  border-radius: var(--asm-radius-md);
+  overflow-x: auto;
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-sm);
+  line-height: var(--asm-line-height-normal);
+  color: var(--asm-color-text);
+  margin-block: var(--asm-space-2);
+}

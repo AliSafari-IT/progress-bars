@@ -1,0 +1,62 @@
+{
+  "name": "@asafarim/progress-bars",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@asafarim/design-tokens": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "rimraf": "^6.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.2.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "build": "pnpm run clean && pnpm run typecheck && vite build",
+    "demo": "pnpm -C demo dev",
+    "predemo": "pnpm install && pnpm run build",
+    "deploy-demo": "cd demo && pnpm run deploy",
+    "deploy": "pnpm run predemo && cd demo && pnpm run deploy-demo",
+    "release": "pnpm run build && node ./scripts/release.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Ali Safari <ali@asafarim.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alisafari-it/progress-bars.git"
+  },
+  "homepage": "https://alisafari-it.github.io/progress-bars"
+}

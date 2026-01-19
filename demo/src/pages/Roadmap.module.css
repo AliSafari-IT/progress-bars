@@ -1,0 +1,112 @@
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-6);
+}
+
+.title {
+  font-size: var(--asm-font-size-4xl);
+  font-weight: var(--asm-font-weight-700);
+  color: var(--asm-color-text);
+}
+
+.subtitle {
+  font-size: var(--asm-font-size-lg);
+  color: var(--asm-color-text-muted);
+  margin-block-start: var(--asm-space-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--asm-space-4);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--asm-space-3);
+  gap: var(--asm-space-2);
+  flex-wrap: wrap;
+}
+
+.componentName {
+  font-size: var(--asm-font-size-xl);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+  margin: 0;
+}
+
+.description {
+  color: var(--asm-color-text-muted);
+  line-height: var(--asm-line-height-relaxed);
+  margin-block-end: var(--asm-space-4);
+}
+
+.propsSection {
+  border-block-start: var(--asm-border-hairline) solid var(--asm-color-border);
+  padding-block-start: var(--asm-space-3);
+}
+
+.propsTitle {
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+  margin-block-end: var(--asm-space-2);
+}
+
+.propsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-1);
+}
+
+.propItem {
+  padding-block: var(--asm-space-1);
+}
+
+.propCode {
+  font-family: var(--asm-font-family-mono);
+  font-size: var(--asm-font-size-xs);
+  color: var(--asm-color-text-muted);
+  background-color: var(--asm-color-surface-muted);
+  padding-block: var(--asm-space-1);
+  padding-inline: var(--asm-space-1);
+  border-radius: var(--asm-radius-sm);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-3);
+}
+
+.sectionTitle {
+  font-size: var(--asm-font-size-2xl);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+  margin-block-end: var(--asm-space-2);
+}
+
+.text {
+  color: var(--asm-color-text-muted);
+  line-height: var(--asm-line-height-relaxed);
+  margin-block-end: var(--asm-space-3);
+}
+
+.principles {
+  padding-inline-start: var(--asm-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-2);
+  color: var(--asm-color-text-muted);
+  line-height: var(--asm-line-height-relaxed);
+}
+
+.principles li {
+  margin-block-end: var(--asm-space-1);
+}

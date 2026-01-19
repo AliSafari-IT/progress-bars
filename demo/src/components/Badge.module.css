@@ -1,0 +1,35 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--asm-space-1);
+  padding-inline: var(--asm-space-2);
+  border-radius: var(--asm-radius-full);
+  font-size: var(--asm-font-size-xs);
+  font-weight: var(--asm-font-weight-500);
+  line-height: var(--asm-line-height-normal);
+}
+
+.default {
+  background-color: var(--asm-color-surface-muted);
+  color: var(--asm-color-text);
+}
+
+.success {
+  background-color: var(--asm-color-success-100);
+  color: var(--asm-color-success-700);
+}
+
+.warning {
+  background-color: var(--asm-color-warning-100);
+  color: var(--asm-color-warning-700);
+}
+
+.danger {
+  background-color: var(--asm-color-danger-100);
+  color: var(--asm-color-danger-700);
+}
+
+.info {
+  background-color: var(--asm-color-info-100);
+  color: var(--asm-color-info-700);
+}

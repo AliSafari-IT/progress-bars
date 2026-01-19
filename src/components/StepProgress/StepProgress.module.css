@@ -1,0 +1,123 @@
+.stepProgress {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--asm-space-2);
+}
+
+.indicator {
+  position: relative;
+  z-index: 1;
+}
+
+.dots .dot {
+  width: var(--asm-icon-size-lg);
+  height: var(--asm-icon-size-lg);
+  border-radius: 50%;
+  background-color: var(--asm-color-surface-muted, #f3f4f6);
+  border: var(--asm-border-thin) solid var(--asm-color-border, #d1d5db);
+  transition: all var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.bars .bar {
+  width: var(--asm-space-10);
+  height: var(--asm-space-2);
+  border-radius: var(--asm-radius-sm);
+  background-color: var(--asm-color-surface-muted, #f3f4f6);
+  transition: all var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.completed .dot {
+  background-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+  border-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+}
+
+.completed .bar {
+  background-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+}
+
+.current .dot {
+  background-color: var(--asm-color-surface, #ffffff);
+  border-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+  border-width: var(--asm-border-thick);
+  box-shadow: 0 0 0 var(--asm-space-1) var(--asm-color-brand-primary-50, #eef2ff);
+}
+
+.current .bar {
+  background-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+  box-shadow: 0 0 0 var(--asm-border-hairline) var(--asm-color-brand-primary-50, #eef2ff);
+}
+
+.label {
+  font-size: var(--asm-font-size-xs);
+  font-weight: var(--asm-font-weight-500);
+  color: var(--asm-color-text-muted);
+  text-align: center;
+  max-width: var(--asm-space-16);
+}
+
+.current .label {
+  color: var(--asm-color-text);
+  font-weight: var(--asm-font-weight-600);
+}
+
+.completed .label {
+  color: var(--asm-color-text);
+}
+
+.connector {
+  position: absolute;
+  top: var(--asm-icon-size-lg);
+  left: 50%;
+  right: -50%;
+  height: var(--asm-border-thin);
+  background-color: var(--asm-color-border, #d1d5db);
+  z-index: 0;
+}
+
+.completed .connector {
+  background-color: var(--step-color, var(--asm-color-brand-primary-700, #1e40ff));
+}
+
+.step:last-child .connector {
+  display: none;
+}
+
+.brand {
+  --step-color: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  --step-color: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  --step-color: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  --step-color: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  --step-color: var(--asm-color-text, #111827);
+}
+
+.info {
+  --step-color: var(--asm-color-info-700, #0369a1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .bar {
+    transition: none;
+  }
+}

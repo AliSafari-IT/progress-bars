@@ -1,0 +1,49 @@
+@import '@asafarim/design-tokens/css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: var(--asm-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--asm-font-family-base);
+  background-color: var(--asm-color-bg);
+  color: var(--asm-color-text);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root {
+  isolation: isolate;
+}

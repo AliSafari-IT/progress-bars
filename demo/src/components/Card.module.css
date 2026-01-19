@@ -1,0 +1,7 @@
+.card {
+  background-color: var(--asm-color-surface);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  border-radius: var(--asm-radius-lg);
+  padding-block: var(--asm-space-4);
+  padding-inline: var(--asm-space-4);
+}

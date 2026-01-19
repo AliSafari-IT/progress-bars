@@ -1,0 +1,55 @@
+.stack {
+  --stack-height: var(--asm-space-3);
+  
+  display: flex;
+  width: 100%;
+  height: var(--stack-height);
+  background-color: var(--asm-color-surface-muted, #f3f4f6);
+  border-radius: var(--asm-radius-full);
+  overflow: hidden;
+}
+
+.item {
+  height: 100%;
+  transition: width var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.item:first-child {
+  border-start-start-radius: var(--asm-radius-full);
+  border-end-start-radius: var(--asm-radius-full);
+}
+
+.item:last-child {
+  border-start-end-radius: var(--asm-radius-full);
+  border-end-end-radius: var(--asm-radius-full);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    transition: none;
+  }
+}
+
+.brand {
+  background-color: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  background-color: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  background-color: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  background-color: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  background-color: var(--asm-color-text, #111827);
+}
+
+.info {
+  background-color: var(--asm-color-info-700, #0369a1);
+}

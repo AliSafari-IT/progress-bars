@@ -1,0 +1,92 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular {
+  --circular-size: 56px;
+  --circular-thickness: 6px;
+  --circular-circumference: 157px;
+  --circular-offset: 0px;
+  --circular-color: var(--asm-color-brand-primary-700, #1e40ff);
+  
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--asm-color-surface-muted, #f3f4f6);
+}
+
+.progress {
+  fill: none;
+  stroke: var(--circular-color);
+  stroke-linecap: round;
+  stroke-dasharray: var(--circular-circumference);
+  stroke-dashoffset: var(--circular-offset);
+  transition: stroke-dashoffset var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.indeterminate .progress {
+  stroke-dasharray: calc(var(--circular-circumference) * 0.25) var(--circular-circumference);
+  animation: circular-rotate 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    transition: none;
+  }
+  
+  .indeterminate .progress {
+    animation: none;
+    stroke-dasharray: calc(var(--circular-circumference) * 0.25) var(--circular-circumference);
+  }
+}
+
+@keyframes circular-rotate {
+  0% {
+    stroke-dashoffset: calc(var(--circular-circumference) * 0.75);
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: calc(var(--circular-circumference) * 0.5);
+    transform: rotate(180deg);
+  }
+  100% {
+    stroke-dashoffset: calc(var(--circular-circumference) * 0.75);
+    transform: rotate(360deg);
+  }
+}
+
+.labelOverlay {
+  position: absolute;
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+}
+
+.brand {
+  --circular-color: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  --circular-color: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  --circular-color: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  --circular-color: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  --circular-color: var(--asm-color-text, #111827);
+}
+
+.info {
+  --circular-color: var(--asm-color-info-700, #0369a1);
+}

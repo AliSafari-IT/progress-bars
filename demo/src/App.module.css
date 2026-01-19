@@ -1,0 +1,6 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--asm-color-bg);
+  color: var(--asm-color-text);
+  font-family: var(--asm-font-family-base);
+}

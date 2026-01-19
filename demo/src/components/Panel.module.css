@@ -1,0 +1,21 @@
+.panel {
+  background-color: var(--asm-color-surface);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  border-radius: var(--asm-radius-md);
+  overflow: hidden;
+}
+
+.title {
+  padding-block: var(--asm-space-3);
+  padding-inline: var(--asm-space-4);
+  background-color: var(--asm-color-surface-muted);
+  border-block-end: var(--asm-border-hairline) solid var(--asm-color-border);
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-600);
+  margin: 0;
+}
+
+.content {
+  padding-block: var(--asm-space-4);
+  padding-inline: var(--asm-space-4);
+}

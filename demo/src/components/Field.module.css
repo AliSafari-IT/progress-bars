@@ -1,0 +1,21 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--asm-space-1);
+}
+
+.label {
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-500);
+  color: var(--asm-color-text);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint {
+  font-size: var(--asm-font-size-xs);
+  color: var(--asm-color-text-muted);
+}

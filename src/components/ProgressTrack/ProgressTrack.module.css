@@ -1,0 +1,55 @@
+.track {
+  --pb-track-thickness: var(--asm-space-2);
+  --pb-track-radius: var(--asm-radius-full);
+  --pb-track-bg: var(--asm-color-surface-muted, #f3f4f6);
+  --pb-track-fg: var(--asm-color-brand-primary-700, #1e40ff);
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.linear {
+  width: 100%;
+  height: var(--pb-track-thickness);
+  border-radius: var(--pb-track-radius);
+  background-color: var(--pb-track-bg);
+}
+
+.vertical {
+  width: var(--pb-track-thickness);
+  height: 100%;
+  border-radius: var(--pb-track-radius);
+  background-color: var(--pb-track-bg);
+}
+
+.circular {
+  display: inline-block;
+}
+
+.noBg {
+  background-color: transparent;
+}
+
+.brand {
+  --pb-track-fg: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  --pb-track-fg: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  --pb-track-fg: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  --pb-track-fg: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  --pb-track-fg: var(--asm-color-text, #111827);
+}
+
+.info {
+  --pb-track-fg: var(--asm-color-info-700, #0369a1);
+}

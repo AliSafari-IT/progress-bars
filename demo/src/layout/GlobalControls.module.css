@@ -1,0 +1,40 @@
+.controls {
+  display: flex;
+  gap: var(--asm-space-3);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--asm-space-2);
+  font-size: var(--asm-font-size-sm);
+}
+
+.label {
+  color: var(--asm-color-text-muted);
+  font-weight: var(--asm-font-weight-500);
+}
+
+.select {
+  padding-block: var(--asm-space-1);
+  padding-inline: var(--asm-space-2);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  border-radius: var(--asm-radius-sm);
+  background-color: var(--asm-color-surface);
+  color: var(--asm-color-text);
+  font-size: var(--asm-font-size-sm);
+  cursor: pointer;
+  transition: border-color var(--asm-motion-duration-fast) var(--asm-motion-easing-standard);
+}
+
+.select:hover {
+  border-color: var(--asm-color-text-muted);
+}
+
+.select:focus-visible {
+  outline: var(--asm-border-thin) solid var(--asm-color-focus-ring);
+  outline-offset: var(--asm-space-1);
+  border-color: var(--asm-color-primary-600);
+}
