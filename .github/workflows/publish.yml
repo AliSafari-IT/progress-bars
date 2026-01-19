@@ -70,7 +70,7 @@ jobs:
       - name: Build library only
         run: pnpm run build
       - name: Build demo with base path
-        run: pnpm --filter progress-bars run build
+        run: pnpm --filter progress-bars-demo run build
       - run: echo "Build complete. Checking demo/dist contents..."
       - run: ls -la demo/dist/ || echo "demo/dist does not exist"
       - name: Publish to gh-pages branch
