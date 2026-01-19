@@ -38,3 +38,30 @@
   outline-offset: var(--asm-space-1);
   border-color: var(--asm-color-primary-600);
 }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--asm-space-1);
+  padding-inline: var(--asm-space-2);
+  border: var(--asm-border-hairline) solid var(--asm-color-border);
+  border-radius: var(--asm-radius-sm);
+  background-color: var(--asm-color-surface);
+  color: var(--asm-color-text);
+  font-size: var(--asm-font-size-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--asm-motion-duration-fast) var(--asm-motion-easing-standard);
+  font-weight: var(--asm-font-weight-500);
+}
+
+.link:hover {
+  border-color: var(--asm-color-text-muted);
+  color: var(--asm-color-primary-600);
+}
+
+.link:focus-visible {
+  outline: var(--asm-border-thin) solid var(--asm-color-focus-ring);
+  outline-offset: var(--asm-space-1);
+  border-color: var(--asm-color-primary-600);
+}

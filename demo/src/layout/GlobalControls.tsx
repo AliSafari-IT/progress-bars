@@ -63,6 +63,23 @@ export function GlobalControls({ themeContext }: GlobalControlsProps) {
           <option value="rtl">RTL</option>
         </select>
       </label>
+      
+      <label className={styles.control}>
+        <span className={styles.label}>Links</span>
+        <select 
+          className={styles.select}
+          onChange={(e) => {
+            if (e.target.value) {
+              window.open(e.target.value, '_blank', 'noopener,noreferrer');
+              e.target.value = '';
+            }
+          }}
+        >
+          <option value="">Select...</option>
+          <option value="https://github.com/AliSafari-IT/progress-bars">GitHub</option>
+          <option value="https://www.npmjs.com/package/@asafarim/progress-bars">npm</option>
+        </select>
+      </label>
     </div>
   )
 }
