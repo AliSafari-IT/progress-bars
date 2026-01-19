@@ -1,6 +1,6 @@
 {
   "name": "@asafarim/progress-bars-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,6 +19,7 @@
     "@asafarim/progress-bars": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^20.10.0",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
