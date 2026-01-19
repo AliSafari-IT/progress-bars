@@ -12,7 +12,7 @@ import { NotFound } from './pages/NotFound'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/progress-bars/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
