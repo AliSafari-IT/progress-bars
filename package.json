@@ -1,6 +1,6 @@
 {
   "name": "@asafarim/progress-bars",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": false,
   "type": "module",
   "sideEffects": [
@@ -46,7 +46,8 @@
     "predemo": "pnpm install && pnpm run build",
     "deploy-demo": "cd demo && pnpm run deploy",
     "deploy": "pnpm run predemo && cd demo && pnpm run deploy-demo",
-    "release": "pnpm run build && node ./scripts/release.js"
+    "update-readme": "node ./scripts/update-readme-version.js",
+    "release": "pnpm run update-readme && pnpm run build && node ./scripts/release.js"
   },
   "publishConfig": {
     "access": "public",

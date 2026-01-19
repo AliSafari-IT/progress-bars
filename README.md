@@ -1,5 +1,7 @@
 # @asafarim/progress-bars
 
+![npm version](https://img.shields.io/npm/v/@asafarim/progress-bars) ![GitHub release](https://img.shields.io/github/release/alisafari-it/progress-bars)
+
 A comprehensive React component library for displaying progress indicators with multiple styles and configurations. Built with TypeScript, styled with design tokens, and fully accessible.
 
 ## Features
@@ -22,6 +24,13 @@ or with pnpm:
 ```bash
 pnpm add @asafarim/progress-bars
 ```
+
+## Demo & Examples
+
+- **Live Demo**: [https://alisafari-it.github.io/progress-bars/](https://alisafari-it.github.io/progress-bars/)
+- **Interactive Playground**: Test components with live configuration
+- **Accessibility Examples**: See ARIA implementations
+- **Visual Grid**: Compare all variants and styles
 
 ## Quick Start
 
