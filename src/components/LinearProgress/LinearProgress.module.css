@@ -100,7 +100,7 @@
   width: 40%;
   left: -40%;
   transition: none;
-  animation: lp-indeterminate var(--asm-motion-duration-slow, 320ms) var(--asm-motion-easing-standard) infinite;
+  animation: lp-indeterminate calc(var(--asm-motion-duration-slow) * 5) var(--asm-motion-easing-standard) infinite;
 }
 
 @keyframes lp-indeterminate {
@@ -126,4 +126,10 @@
     left: 0;
     width: 50%;
   }
+}
+
+:global([data-reduced-motion="true"]) .variant_indeterminate .bar {
+  animation: none;
+  left: 0;
+  width: 50%;
 }
