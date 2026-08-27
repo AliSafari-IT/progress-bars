@@ -53,7 +53,7 @@ const roadmapItems: ComponentRoadmap[] = [
   },
   {
     name: 'StepProgress',
-    status: 'in-progress',
+    status: 'released',
     description: 'Stepper component showing progress through a multi-step workflow',
     props: [
       'steps: Step[]',

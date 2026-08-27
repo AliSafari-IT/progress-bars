@@ -605,6 +605,23 @@ export function ComponentsPage() {
               variant="bars"
             />
           </DemoCard>
+
+          <DemoCard title="Vertical Clickable">
+            <StepProgress
+              steps={[
+                { label: 'Account' },
+                { label: 'Profile' },
+                { label: 'Preferences' },
+                { label: 'Complete' },
+              ]}
+              currentStep={currentStep}
+              orientation="vertical"
+              size="sm"
+              clickable
+              onStepClick={setCurrentStep}
+              label="Setup progress"
+            />
+          </DemoCard>
         </div>
       </section>
 

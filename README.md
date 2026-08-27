@@ -166,24 +166,34 @@ Progress bar divided into discrete segments.
 
 ### StepProgress
 
-Multi-step progress indicator showing completion status.
+Stepper component showing progress through a multi-step workflow.
 
 **Props:**
 
-- `steps?: Array<{ label: string; completed?: boolean }>` - Step definitions
-- `currentStep?: number` - Current active step
-- `tone?: ProgressTone` - Color tone
+- `steps: Array<{ label: string; tone?: ProgressTone; completed?: boolean }>` - Step definitions
+- `currentStep: number` - Current active step index
+- `variant?: 'dots' | 'bars'` - Indicator style
+- `orientation?: 'horizontal' | 'vertical'` - Step layout
+- `size?: 'sm' | 'md' | 'lg'` - Indicator size
+- `showConnectors?: boolean` - Show lines between steps
+- `clickable?: boolean` - Make steps interactive when `onStepClick` is provided
+- `onStepClick?: (step: number) => void` - Handle step selection
+- `label?: string` - Accessible progress label
 
 **Example:**
 
 ```tsx
 <StepProgress
   steps={[
-    { label: 'Step 1', completed: true },
-    { label: 'Step 2', completed: true },
-    { label: 'Step 3' }
+    { label: 'Account', completed: true },
+    { label: 'Profile', completed: true },
+    { label: 'Review' }
   ]}
   currentStep={2}
+  orientation="horizontal"
+  clickable
+  onStepClick={(step) => setCurrentStep(step)}
+  label="Setup progress"
 />
 ```
 
