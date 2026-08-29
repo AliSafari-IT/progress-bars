@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "kill-port 5173 && vite",
     "build": "cd .. && pnpm run build && cd demo && tsc && vite build",
+    "postbuild": "node -e \"require('node:fs').copyFileSync('dist/index.html', 'dist/404.html')\"",
     "predemo": "pnpm install && pnpm run build",
     "demo": "pnpm run dev",
     "preview": "vite preview",
