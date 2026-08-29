@@ -29,34 +29,33 @@
   transition: stroke-dashoffset var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
 }
 
+.indeterminate {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: circular-rotate calc(var(--asm-motion-duration-slow) * 4) linear infinite;
+}
+
 .indeterminate .progress {
   stroke-dasharray: calc(var(--circular-circumference) * 0.25) var(--circular-circumference);
-  animation: circular-rotate 1.4s linear infinite;
+  stroke-dashoffset: calc(var(--circular-circumference) * 0.75);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .progress {
     transition: none;
   }
-  
-  .indeterminate .progress {
+
+  .indeterminate {
     animation: none;
-    stroke-dasharray: calc(var(--circular-circumference) * 0.25) var(--circular-circumference);
   }
 }
 
 @keyframes circular-rotate {
-  0% {
-    stroke-dashoffset: calc(var(--circular-circumference) * 0.75);
-    transform: rotate(0deg);
+  from {
+    transform: rotate(-90deg);
   }
-  50% {
-    stroke-dashoffset: calc(var(--circular-circumference) * 0.5);
-    transform: rotate(180deg);
-  }
-  100% {
-    stroke-dashoffset: calc(var(--circular-circumference) * 0.75);
-    transform: rotate(360deg);
+  to {
+    transform: rotate(270deg);
   }
 }
 
