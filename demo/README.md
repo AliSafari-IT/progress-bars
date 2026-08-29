@@ -169,7 +169,7 @@ Currently, no environment variables are required. Configuration is handled throu
 
 ### Port Already in Use
 
-If port 5173 is already in use, the demo script will attempt to kill the process. If this fails:
+The `dev` and `demo` scripts always kill the process using port 5173 before starting Vite. If this fails:
 
 ```bash
 # Manually kill the process on port 5173

@@ -1,0 +1,88 @@
+.root {
+  --tp-track-height: var(--asm-space-2);
+  --tp-track-bg: var(--asm-color-surface-muted);
+  --tp-track-border: var(--asm-color-border);
+  --tp-radius: var(--asm-radius-full);
+
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.size_sm {
+  --tp-track-height: var(--asm-space-1);
+}
+
+.size_md {
+  --tp-track-height: var(--asm-space-2);
+}
+
+.size_lg {
+  --tp-track-height: var(--asm-space-3);
+}
+
+.withMarkerLabels {
+  padding-block-end: var(--asm-space-5);
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  block-size: var(--tp-track-height);
+  border: var(--asm-border-hairline) solid var(--tp-track-border);
+  border-radius: var(--tp-radius);
+  background: var(--tp-track-bg);
+}
+
+.bar {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: 1;
+  max-inline-size: 100%;
+  border-radius: var(--tp-radius);
+  transition:
+    inline-size var(--asm-motion-duration-normal) var(--asm-motion-easing-standard),
+    background var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.markers {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marker {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: var(--tp-marker-position);
+  transform: translateX(-50%);
+}
+
+.markerLine {
+  display: block;
+  inline-size: var(--asm-border-thick);
+  block-size: 100%;
+  border-radius: var(--asm-radius-full);
+  background: var(--tp-marker-color);
+  box-shadow: 0 0 0 var(--asm-border-hairline) var(--asm-color-surface);
+}
+
+.markerLabel {
+  position: absolute;
+  inset-block-start: calc(100% + var(--asm-space-1));
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  color: var(--asm-color-text-muted);
+  font-size: var(--asm-font-size-xs);
+  font-weight: var(--asm-font-weight-500);
+  line-height: var(--asm-line-height-tight);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

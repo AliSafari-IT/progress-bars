@@ -5,6 +5,7 @@ import {
   VerticalProgress,
   SegmentedProgress,
   StepProgress,
+  ThresholdProgressBar,
   ProgressStack,
   Spinner,
   ProgressLabel,
@@ -233,6 +234,51 @@ export function StepBars() {
     />
   )
 }`,
+  thresholdSmooth: `import { ThresholdProgressBar } from '@asafarim/progress-bars'
+import { useState } from 'react'
+
+export function StorageUsage() {
+  const [value, setValue] = useState(82)
+
+  return (
+    <div>
+      <ThresholdProgressBar
+        value={value}
+        thresholds={[
+          { threshold: 0, color: 'var(--asm-color-success-700)' },
+          { threshold: 75, color: 'var(--asm-color-warning-700)' },
+          { threshold: 90, color: 'var(--asm-color-danger-700)' },
+        ]}
+        markers={[{ value: 80, label: 'Quota target' }]}
+        label="Storage usage"
+      />
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value={value}
+        onChange={(event) => setValue(Number(event.target.value))}
+      />
+    </div>
+  )
+}`,
+  thresholdStep: `import { ThresholdProgressBar } from '@asafarim/progress-bars'
+
+export function QuotaUsage() {
+  return (
+    <ThresholdProgressBar
+      value={82}
+      interpolation="step"
+      thresholds={[
+        { threshold: 0, color: 'var(--asm-color-success-700)' },
+        { threshold: 75, color: 'var(--asm-color-warning-700)' },
+        { threshold: 90, color: 'var(--asm-color-danger-700)' },
+      ]}
+      markers={[{ value: 80, label: 'Quota target' }]}
+      label="Quota usage"
+    />
+  )
+}`,
   stackedProgress: `import { ProgressStack, ProgressLegend } from '@asafarim/progress-bars'
 
 export function StackedProgress() {
@@ -395,6 +441,7 @@ export function ComponentsPage() {
   const [linearValue, setLinearValue] = useState(65)
   const [circularValue, setCircularValue] = useState(75)
   const [verticalValue, setVerticalValue] = useState(50)
+  const [thresholdValue, setThresholdValue] = useState(72)
   const [currentStep, setCurrentStep] = useState(1)
   const [openDialog, setOpenDialog] = useState<string | null>(null)
 
@@ -446,6 +493,50 @@ export function ComponentsPage() {
                 <LinearProgress value={30} tone="danger" />
               </div>
             </div>
+          </DemoCard>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>ThresholdProgressBar</h2>
+        <div className={styles.grid}>
+          <DemoCard title={<>Smooth Gradient <ViewCode handleViewCode={() => setOpenDialog('thresholdSmooth')} /></>}>
+            <ThresholdProgressBar
+              value={thresholdValue}
+              thresholds={[
+                { threshold: 0, color: 'var(--asm-color-success-700)' },
+                { threshold: 75, color: 'var(--asm-color-warning-700)' },
+                { threshold: 90, color: 'var(--asm-color-danger-700)' },
+              ]}
+              markers={[
+                { value: 75, label: 'Warning' },
+                { value: 90, label: 'Critical' },
+              ]}
+              label="Storage usage"
+            />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={thresholdValue}
+              onChange={(e) => setThresholdValue(Number(e.target.value))}
+              aria-label="Storage usage"
+              className={styles.slider}
+            />
+          </DemoCard>
+
+          <DemoCard title={<>Sharp Thresholds <ViewCode handleViewCode={() => setOpenDialog('thresholdStep')} /></>}>
+            <ThresholdProgressBar
+              value={thresholdValue}
+              interpolation="step"
+              thresholds={[
+                { threshold: 0, color: 'var(--asm-color-success-700)' },
+                { threshold: 75, color: 'var(--asm-color-warning-700)' },
+                { threshold: 90, color: 'var(--asm-color-danger-700)' },
+              ]}
+              markers={[{ value: 80, label: 'Quota target' }]}
+              label="Quota usage"
+            />
           </DemoCard>
         </div>
       </section>
@@ -960,6 +1051,46 @@ export function ComponentsPage() {
             ]}
             currentStep={2}
             variant="bars"
+          />
+        }
+      />
+      <CodeSnippetDialog
+        isOpen={openDialog === 'thresholdSmooth'}
+        onClose={handleCloseDialog}
+        code={codeSnippets.thresholdSmooth}
+        title="Threshold Smooth Gradient"
+        preview={
+          <ThresholdProgressBar
+            value={thresholdValue}
+            thresholds={[
+              { threshold: 0, color: 'var(--asm-color-success-700)' },
+              { threshold: 75, color: 'var(--asm-color-warning-700)' },
+              { threshold: 90, color: 'var(--asm-color-danger-700)' },
+            ]}
+            markers={[
+              { value: 75, label: 'Warning' },
+              { value: 90, label: 'Critical' },
+            ]}
+            label="Storage usage"
+          />
+        }
+      />
+      <CodeSnippetDialog
+        isOpen={openDialog === 'thresholdStep'}
+        onClose={handleCloseDialog}
+        code={codeSnippets.thresholdStep}
+        title="Threshold Step Colors"
+        preview={
+          <ThresholdProgressBar
+            value={thresholdValue}
+            interpolation="step"
+            thresholds={[
+              { threshold: 0, color: 'var(--asm-color-success-700)' },
+              { threshold: 75, color: 'var(--asm-color-warning-700)' },
+              { threshold: 90, color: 'var(--asm-color-danger-700)' },
+            ]}
+            markers={[{ value: 80, label: 'Quota target' }]}
+            label="Quota usage"
           />
         }
       />

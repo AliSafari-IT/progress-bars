@@ -4,7 +4,7 @@ import styles from './Roadmap.module.css'
 
 interface ComponentRoadmap {
   name: string
-  status: 'planned' | 'in-progress' | 'released'
+  status: 'planned' | 'in-progress' | 'released' | 'coming-soon'
   description: string
   props: string[]
 }
@@ -52,6 +52,18 @@ const roadmapItems: ComponentRoadmap[] = [
     ],
   },
   {
+    name: 'ThresholdProgressBar',
+    status: 'released',
+    description: 'Threshold-based bar with smooth gradients, status colors, and target markers',
+    props: [
+      'value: number',
+      'thresholds: Threshold[]',
+      'interpolation: smooth | step',
+      'markers: Marker[]',
+      'min: number, max: number',
+    ],
+  },
+  {
     name: 'StepProgress',
     status: 'released',
     description: 'Stepper component showing progress through a multi-step workflow',
@@ -63,6 +75,16 @@ const roadmapItems: ComponentRoadmap[] = [
       'showConnectors: boolean',
       'clickable: boolean',
       'onStepClick: (step: number) => void',
+    ],
+  },
+  {
+    name: 'ConcentricRingProgress',
+    status: 'coming-soon',
+    description: 'Multi-layered radial progress rings for compact multi-metric dashboards',
+    props: [
+      'rings: 2 | 3 | 4 metrics',
+      'center: ReactNode',
+      'independent animation settings',
     ],
   },
   {
@@ -89,6 +111,8 @@ export function Roadmap() {
         return <Badge variant="info">In Progress</Badge>
       case 'planned':
         return <Badge variant="default">Planned</Badge>
+      case 'coming-soon':
+        return <Badge variant="info">Coming Soon</Badge>
     }
   }
 

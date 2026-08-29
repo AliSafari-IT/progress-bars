@@ -52,6 +52,14 @@ function App() {
             <p>Step indicator for multi-step workflows</p>
           </div>
           <div className={styles.card}>
+            <h3>ThresholdProgressBar</h3>
+            <p>Threshold-based gradients and status markers</p>
+          </div>
+          <div className={styles.card}>
+            <h3>ConcentricRingProgress</h3>
+            <p>Coming soon: compact multi-metric radial rings</p>
+          </div>
+          <div className={styles.card}>
             <h3>ProgressStack</h3>
             <p>Stacked progress bars without gaps</p>
           </div>

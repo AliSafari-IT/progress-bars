@@ -6,5 +6,6 @@ export * from "./CircularProgress";
 export * from "./VerticalProgress";
 export * from "./SegmentedProgress";
 export * from "./StepProgress";
+export * from "./ThresholdProgressBar";
 export * from "./ProgressLegend";
 export * from "./ProgressStack";

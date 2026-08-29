@@ -1,13 +1,13 @@
 {
   "name": "@asafarim/progress-bars-demo",
-  "version": "1.4.0",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "kill-port 5173 && vite",
     "build": "cd .. && pnpm run build && cd demo && tsc && vite build",
     "predemo": "pnpm install && pnpm run build",
-    "demo": "kill-port 5173 && pnpm run dev",
+    "demo": "pnpm run dev",
     "preview": "vite preview",
     "deploy": "pnpm run build && gh-pages -d dist"
   },

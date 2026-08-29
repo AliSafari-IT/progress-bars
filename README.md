@@ -164,6 +164,38 @@ Progress bar divided into discrete segments.
 <SegmentedProgress value={3} segments={5} />
 ```
 
+### ThresholdProgressBar
+
+Progress bar that maps numeric ranges to threshold colors, smooth gradients, or sharp status states.
+
+**Props:**
+
+- `value: number` - Current value
+- `thresholds: Array<{ threshold: number; color: string }>` - Color breakpoints
+- `min?: number` - Minimum range value (default: `0`)
+- `max?: number` - Maximum range value (default: `100`)
+- `interpolation?: 'smooth' | 'step'` - Gradient interpolation mode
+- `markers?: Array<{ value: number; label?: string; color?: string }>` - Target markers
+- `showMarkerLabels?: boolean` - Display marker labels
+- `size?: 'sm' | 'md' | 'lg'` - Bar size
+- `thickness?: number` - Custom track thickness
+- `label?: string` - Accessible progress label
+
+**Example:**
+
+```tsx
+<ThresholdProgressBar
+  value={82}
+  thresholds={[
+    { threshold: 0, color: 'var(--asm-color-success-700)' },
+    { threshold: 75, color: 'var(--asm-color-warning-700)' },
+    { threshold: 90, color: 'var(--asm-color-danger-700)' },
+  ]}
+  markers={[{ value: 80, label: 'Quota target' }]}
+  label="Storage usage"
+/>
+```
+
 ### StepProgress
 
 Stepper component showing progress through a multi-step workflow.
