@@ -1,8 +1,32 @@
 {
   "name": "@asafarim/progress-bars",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "private": false,
   "type": "module",
+  "description": "Accessible, themeable React progress bar components (linear, circular, step, segmented, threshold, vertical, spinner) built with CSS modules and design tokens.",
+  "keywords": [
+    "react",
+    "react-components",
+    "progress-bar",
+    "progress",
+    "linear-progress",
+    "circular-progress",
+    "spinner",
+    "step-progress",
+    "segmented-progress",
+    "threshold-progress",
+    "vertical-progress",
+    "progress-legend",
+    "progress-stack",
+    "ui",
+    "ui-components",
+    "design-system",
+    "design-tokens",
+    "css-modules",
+    "typescript",
+    "accessible",
+    "asafarim"
+  ],
   "sideEffects": [
     "**/*.css"
   ],
@@ -54,12 +78,26 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "Ali Safari <ali@asafarim.com>",
+  "author": "Ali Safari <ali@asafarim.com> (https://asafarim.com)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alisafari-it/progress-bars.git"
+    "url": "https://github.com/alisafari-it/progress-bars.git",
+    "directory": "."
   },
   "homepage": "https://alisafari-it.github.io/progress-bars",
+  "bugs": {
+    "url": "https://github.com/alisafari-it/progress-bars/issues",
+    "email": "ali@asafarim.com"
+  },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://www.buymeacoffee.com/asafarim"
+    }
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "packageManager": "pnpm@11.24.0+sha512.bd27e345e976dcb0be0b7a1228217b049a817e21b1f355c90dbe7dc46671895a8bc1e6d06c24554505ea93ea0b45f489a27ec1bfbc8de6a9659fca0f16fa0000"
 }
