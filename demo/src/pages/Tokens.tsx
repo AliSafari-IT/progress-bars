@@ -126,10 +126,24 @@ export function Tokens() {
         <h2 className={styles.sectionTitle}>Usage</h2>
         <Card>
           <p className={styles.text}>
-            Import the design tokens CSS file in your application entry point:
+            Install the progress-bars package first. It installs <code>@asafarim/design-tokens</code> as a runtime dependency:
           </p>
           <pre className={styles.codeBlock}>
-{`import '@asafarim/design-tokens/css'`}
+{`npm install @asafarim/progress-bars react react-dom`}
+          </pre>
+          <p className={styles.text}>
+            For the standard setup, import the bundled stylesheet from progress-bars:
+          </p>
+          <pre className={styles.codeBlock}>
+{`import '@asafarim/progress-bars/dist/style.css'`}
+          </pre>
+          <p className={styles.text}>
+            If your application imports the design tokens CSS directly, install that package explicitly:
+          </p>
+          <pre className={styles.codeBlock}>
+{`npm install @asafarim/design-tokens
+
+import '@asafarim/design-tokens/css'`}
           </pre>
           <p className={styles.text}>
             Then use the CSS custom properties in your styles:
@@ -138,8 +152,8 @@ export function Tokens() {
 {`.myComponent {
   padding: var(--asm-space-4);
   border-radius: var(--asm-radius-md);
-  color: var(--asm-color-text-primary);
-  background-color: var(--asm-color-surface-base);
+  color: var(--asm-color-text);
+  background-color: var(--asm-color-surface);
   transition: all var(--asm-motion-duration-normal) ease;
 }`}
           </pre>

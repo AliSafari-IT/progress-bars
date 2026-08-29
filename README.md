@@ -273,10 +273,26 @@ Available color tones (from design tokens):
 
 ## Styling
 
-The package uses CSS Modules and design tokens for styling. Import the styles:
+Install the package and its React peer dependencies:
+
+```bash
+npm install @asafarim/progress-bars react react-dom
+```
+
+`@asafarim/design-tokens` is installed automatically as a runtime dependency. For the standard setup, import the bundled stylesheet:
 
 ```tsx
 import '@asafarim/progress-bars/dist/style.css';
+```
+
+If your application imports the token stylesheet directly, install the package explicitly:
+
+```bash
+npm install @asafarim/design-tokens
+```
+
+```tsx
+import '@asafarim/design-tokens/css';
 ```
 
 Styles are automatically scoped to components and use CSS custom properties from `@asafarim/design-tokens`.

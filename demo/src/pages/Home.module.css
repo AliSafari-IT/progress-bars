@@ -13,12 +13,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-block-end: var(--asm-space-2, 0.5rem);
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: var(--asm-color-text-secondary, #666);
+  color: var(--asm-color-text-muted);
 }
 
 .section {
@@ -30,7 +30,7 @@
 .section h2 {
   font-size: 1.75rem;
   font-weight: 600;
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
 }
 
 .grid {
@@ -43,11 +43,11 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-block-end: var(--asm-space-2, 0.5rem);
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
 }
 
 .cardText {
-  color: var(--asm-color-text-secondary, #666);
+  color: var(--asm-color-text-muted);
   margin-block-end: var(--asm-space-3, 0.75rem);
   line-height: 1.6;
 }

@@ -14,13 +14,13 @@
 .title {
   font-size: 4rem;
   font-weight: 700;
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
   margin-block-end: var(--asm-space-2, 0.5rem);
 }
 
 .text {
   font-size: 1.25rem;
-  color: var(--asm-color-text-secondary, #666);
+  color: var(--asm-color-text-muted);
   margin-block-end: var(--asm-space-4, 1rem);
 }
 

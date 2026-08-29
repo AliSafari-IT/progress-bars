@@ -7,7 +7,7 @@
 .title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
 }
 
 .section {
@@ -19,7 +19,7 @@
 .sectionTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--asm-color-text-primary, #000);
+  color: var(--asm-color-text);
 }
 
 .grid {
@@ -88,7 +88,7 @@
 
 .text {
   font-size: 0.875rem;
-  color: var(--asm-color-text-secondary, #666);
+  color: var(--asm-color-text-muted);
   text-align: center;
 }
 
