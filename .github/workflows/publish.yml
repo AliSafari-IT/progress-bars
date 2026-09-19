@@ -45,6 +45,85 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  release:
+    name: Tag & publish version bump
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.13.0"
+          registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
+
+      - name: Resolve package name & version
+        id: pkg
+        run: |
+          echo "name=$(node -p "require('./package.json').name")" >> "$GITHUB_OUTPUT"
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Check if version is already on npm
+        id: npm
+        env:
+          PKG: ${{ steps.pkg.outputs.name }}
+          VERSION: ${{ steps.pkg.outputs.version }}
+        run: |
+          if npm view "${PKG}@${VERSION}" version --registry https://registry.npmjs.org >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "${PKG}@${VERSION} already on npm, publish step will be skipped"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync version tag with HEAD
+        env:
+          VERSION: ${{ steps.pkg.outputs.version }}
+          PUBLISHED: ${{ steps.npm.outputs.published }}
+        run: |
+          TAG="v${VERSION}"
+          # tail -1 picks the peeled commit sha for annotated tags
+          REMOTE_SHA="$(git ls-remote origin "refs/tags/${TAG}" "refs/tags/${TAG}^{}" | tail -n1 | cut -f1)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -z "$REMOTE_SHA" ]; then
+            echo "Creating tag ${TAG} at ${GITHUB_SHA}"
+            git tag "$TAG"
+            git push origin "refs/tags/${TAG}"
+          elif [ "$REMOTE_SHA" != "$GITHUB_SHA" ] && [ "$PUBLISHED" = "false" ]; then
+            echo "::warning::Tag ${TAG} points at stale commit ${REMOTE_SHA}, moving to ${GITHUB_SHA} before publishing"
+            git tag -f "$TAG"
+            git push -f origin "refs/tags/${TAG}"
+          elif [ "$REMOTE_SHA" != "$GITHUB_SHA" ]; then
+            echo "::notice::Tag ${TAG} points at ${REMOTE_SHA}, not HEAD — leaving it since ${VERSION} is already published"
+          else
+            echo "Tag ${TAG} already points at HEAD"
+          fi
+
+      - name: Install dependencies
+        if: steps.npm.outputs.published == 'false'
+        run: pnpm install
+
+      - name: Build
+        if: steps.npm.outputs.published == 'false'
+        run: pnpm build
+
+      - name: Publish to NPM (latest)
+        if: steps.npm.outputs.published == 'false'
+        run: pnpm publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   deploy_pages:
     name: Deploy docs to GitHub Pages
     if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
