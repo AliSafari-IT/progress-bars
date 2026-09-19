@@ -3,6 +3,7 @@ export * from "./ProgressTrack";
 export * from "./ProgressLabel";
 export * from "./Spinner";
 export * from "./CircularProgress";
+export * from "./ConcentricRingProgress";
 export * from "./VerticalProgress";
 export * from "./SegmentedProgress";
 export * from "./StepProgress";

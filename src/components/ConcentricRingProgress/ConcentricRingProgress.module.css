@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rings {
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--asm-color-surface-muted, #f3f4f6);
+}
+
+.progress {
+  fill: none;
+  stroke: var(--ring-color);
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--asm-motion-duration-normal) var(--asm-motion-easing-standard);
+}
+
+.noTransition {
+  transition: none;
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--asm-font-size-sm);
+  font-weight: var(--asm-font-weight-600);
+  color: var(--asm-color-text);
+}
+
+.brand {
+  --ring-color: var(--asm-color-brand-primary-700, #1e40ff);
+}
+
+.success {
+  --ring-color: var(--asm-color-success-700, #15803d);
+}
+
+.warning {
+  --ring-color: var(--asm-color-warning-700, #b45309);
+}
+
+.danger {
+  --ring-color: var(--asm-color-danger-700, #b91c1c);
+}
+
+.neutral {
+  --ring-color: var(--asm-color-text, #111827);
+}
+
+.info {
+  --ring-color: var(--asm-color-info-700, #0369a1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    transition: none;
+  }
+}

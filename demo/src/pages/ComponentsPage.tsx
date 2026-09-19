@@ -7,6 +7,7 @@ import {
   StepProgress,
   ThresholdProgressBar,
   ProgressStack,
+  ConcentricRingProgress,
   Spinner,
   ProgressLabel,
   ProgressLegend,
@@ -103,6 +104,55 @@ export function CircularSizesTones() {
       <CircularProgress value={85} size={56} tone="success" />
       <CircularProgress value={65} size={72} tone="warning" />
     </div>
+  )
+}`,
+  concentricRings: `import { ConcentricRingProgress, ProgressLegend } from '@asafarim/progress-bars'
+import { useState } from 'react'
+
+export function ActivityRings() {
+  const [value, setValue] = useState(70)
+
+  return (
+    <div>
+      <ConcentricRingProgress
+        label="Daily activity"
+        rings={[
+          { value, tone: 'danger', label: 'Move' },
+          { value: Math.min(100, value * 1.2), tone: 'success', label: 'Exercise' },
+          { value: Math.min(100, value * 0.8), tone: 'info', label: 'Stand' },
+        ]}
+      />
+      <ProgressLegend
+        items={[
+          { tone: 'danger', label: 'Move', value },
+          { tone: 'success', label: 'Exercise', value: Math.min(100, Math.round(value * 1.2)) },
+          { tone: 'info', label: 'Stand', value: Math.min(100, Math.round(value * 0.8)) },
+        ]}
+        layout="row"
+      />
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value={value}
+        onChange={(e) => setValue(Number(e.target.value))}
+      />
+    </div>
+  )
+}`,
+  concentricCenter: `import { ConcentricRingProgress } from '@asafarim/progress-bars'
+
+export function RingsWithCenter() {
+  return (
+    <ConcentricRingProgress
+      label="Storage breakdown"
+      size={140}
+      rings={[
+        { value: 75, tone: 'brand', label: 'Used' },
+        { value: 50, tone: 'warning', label: 'Cached' },
+      ]}
+      center={<span>75%</span>}
+    />
   )
 }`,
   verticalDeterminate: `import { VerticalProgress } from '@asafarim/progress-bars'
@@ -440,6 +490,7 @@ const ViewCode = ({ handleViewCode }: { handleViewCode: () => void }) => {
 export function ComponentsPage() {
   const [linearValue, setLinearValue] = useState(65)
   const [circularValue, setCircularValue] = useState(75)
+  const [ringValue, setRingValue] = useState(70)
   const [verticalValue, setVerticalValue] = useState(50)
   const [thresholdValue, setThresholdValue] = useState(72)
   const [currentStep, setCurrentStep] = useState(1)
@@ -569,6 +620,54 @@ export function ComponentsPage() {
               <CircularProgress value={75} size={40} tone="brand" />
               <CircularProgress value={85} size={56} tone="success" />
               <CircularProgress value={65} size={72} tone="warning" />
+            </div>
+          </DemoCard>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>ConcentricRingProgress</h2>
+        <div className={styles.grid}>
+          <DemoCard title={<>Activity Rings <ViewCode handleViewCode={() => setOpenDialog('concentricRings')} /></>}>
+            <div className={styles.centered}>
+              <ConcentricRingProgress
+                label="Daily activity"
+                rings={[
+                  { value: ringValue, tone: 'danger', label: 'Move' },
+                  { value: Math.min(100, ringValue * 1.2), tone: 'success', label: 'Exercise' },
+                  { value: Math.min(100, ringValue * 0.8), tone: 'info', label: 'Stand' },
+                ]}
+              />
+            </div>
+            <ProgressLegend
+              items={[
+                { tone: 'danger', label: 'Move', value: ringValue },
+                { tone: 'success', label: 'Exercise', value: Math.min(100, Math.round(ringValue * 1.2)) },
+                { tone: 'info', label: 'Stand', value: Math.min(100, Math.round(ringValue * 0.8)) },
+              ]}
+              layout="row"
+            />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={ringValue}
+              onChange={(e) => setRingValue(Number(e.target.value))}
+              className={styles.slider}
+            />
+          </DemoCard>
+
+          <DemoCard title={<>Center Content <ViewCode handleViewCode={() => setOpenDialog('concentricCenter')} /></>}>
+            <div className={styles.centered}>
+              <ConcentricRingProgress
+                label="Storage breakdown"
+                size={140}
+                rings={[
+                  { value: 75, tone: 'brand', label: 'Used' },
+                  { value: 50, tone: 'warning', label: 'Cached' },
+                ]}
+                center={<span>75%</span>}
+              />
             </div>
           </DemoCard>
         </div>
@@ -1246,6 +1345,39 @@ export function ComponentsPage() {
               { tone: 'neutral', label: 'Other', value: 10 },
             ]}
             layout="column"
+          />
+        }
+      />
+      <CodeSnippetDialog
+        isOpen={openDialog === 'concentricRings'}
+        onClose={handleCloseDialog}
+        code={codeSnippets.concentricRings}
+        title="Activity Rings"
+        preview={
+          <ConcentricRingProgress
+            label="Daily activity"
+            rings={[
+              { value: 70, tone: 'danger', label: 'Move' },
+              { value: 84, tone: 'success', label: 'Exercise' },
+              { value: 56, tone: 'info', label: 'Stand' },
+            ]}
+          />
+        }
+      />
+      <CodeSnippetDialog
+        isOpen={openDialog === 'concentricCenter'}
+        onClose={handleCloseDialog}
+        code={codeSnippets.concentricCenter}
+        title="Rings With Center"
+        preview={
+          <ConcentricRingProgress
+            label="Storage breakdown"
+            size={140}
+            rings={[
+              { value: 75, tone: 'brand', label: 'Used' },
+              { value: 50, tone: 'warning', label: 'Cached' },
+            ]}
+            center={<span>75%</span>}
           />
         }
       />

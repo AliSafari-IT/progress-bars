@@ -1,6 +1,6 @@
 {
   "name": "@asafarim/progress-bars",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "private": false,
   "type": "module",
   "description": "Accessible, themeable React progress bar components (linear, circular, step, segmented, threshold, vertical, spinner) built with CSS modules and design tokens.",

@@ -132,12 +132,16 @@ const roadmapItems: ComponentRoadmap[] = [
   },
   {
     name: 'ConcentricRingProgress',
-    status: 'coming-soon',
+    status: 'released',
     description: 'Multi-layered radial progress rings for compact multi-metric dashboards',
     props: [
-      'rings: 2 | 3 | 4 metrics',
+      'rings: ConcentricRing[] (2-4)',
+      'size: number',
+      'ringThickness: number',
+      'ringGap: number',
       'center: ReactNode',
-      'independent animation settings',
+      'animate: boolean',
+      'aria-label: string',
     ],
   },
   {

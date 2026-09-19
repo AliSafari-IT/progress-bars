@@ -6,7 +6,7 @@ A comprehensive React component library for displaying progress indicators with 
 
 ## Features
 
-- **Multiple Progress Components**: Linear, Circular, Vertical, Segmented, Step, and Spinner variants
+- **Multiple Progress Components**: Linear, Circular, Vertical, Segmented, Step, Concentric Ring, and Spinner variants
 - **Fully Accessible**: ARIA attributes and semantic HTML for screen readers
 - **Design Token Integration**: Uses `@asafarim/design-tokens` for consistent styling
 - **TypeScript Support**: Full type safety with exported interfaces
@@ -261,6 +261,34 @@ Legend component for displaying progress information.
 
 Container for stacking multiple progress components.
 
+### ConcentricRingProgress
+
+Multi-layered radial progress rings for compact multi-metric dashboards.
+
+**Props:**
+
+- `rings: ConcentricRing[]` - 2-4 rings (outermost first); each accepts `value`, `tone`, `label`, and optional `thickness`
+- `size?: number` - Overall diameter in pixels (default: `120`)
+- `ringThickness?: number` - Stroke width per ring (default: `8`)
+- `ringGap?: number` - Gap between rings in pixels (default: `4`)
+- `center?: ReactNode` - Content rendered in the middle
+- `animate?: boolean` - Animate ring fills (default: `true`)
+- `label?: string` - Accessible label for the group
+
+**Example:**
+
+```tsx
+<ConcentricRingProgress
+  label="Daily activity"
+  rings={[
+    { value: 70, tone: 'danger', label: 'Move' },
+    { value: 84, tone: 'success', label: 'Exercise' },
+    { value: 56, tone: 'info', label: 'Stand' },
+  ]}
+  center={<span>70%</span>}
+/>
+```
+
 ## Tones
 
 Available color tones (from design tokens):
@@ -326,6 +354,7 @@ Full TypeScript support with exported types:
 import type {
   LinearProgressProps,
   CircularProgressProps,
+  ConcentricRingProgressProps,
   ProgressTone
 } from '@asafarim/progress-bars';
 ```
