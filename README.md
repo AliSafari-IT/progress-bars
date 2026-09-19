@@ -364,7 +364,7 @@ import type {
 See [CHANGELOG.md](./CHANGELOG.md) for a summary of changes in each release, or browse
 [GitHub Releases](https://github.com/AliSafari-IT/progress-bars/releases) for release notes.
 
-**Latest — v0.7.0:** added `ConcentricRingProgress`, a multi-layered radial progress
+**Latest — v0.7.1:** added `ConcentricRingProgress`, a multi-layered radial progress
 component for compact multi-metric dashboards.
 
 ## Browser Support
