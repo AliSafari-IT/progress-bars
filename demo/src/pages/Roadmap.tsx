@@ -78,6 +78,59 @@ const roadmapItems: ComponentRoadmap[] = [
     ],
   },
   {
+    name: 'Spinner',
+    status: 'released',
+    description: 'Lightweight indeterminate spinner for loading states',
+    props: [
+      'size: number',
+      'thickness: number',
+      'tone: ProgressTone',
+      'aria-label: string',
+    ],
+  },
+  {
+    name: 'ProgressLabel',
+    status: 'released',
+    description: 'Companion label showing formatted progress values alongside any indicator',
+    props: [
+      'label: string',
+      'value: number',
+      'format: (value: number) => string',
+      'id: string',
+    ],
+  },
+  {
+    name: 'ProgressLegend',
+    status: 'released',
+    description: 'Color-keyed legend for multi-metric progress displays',
+    props: [
+      'items: ProgressLegendItem[]',
+      'layout: row | column',
+    ],
+  },
+  {
+    name: 'ProgressStack',
+    status: 'released',
+    description: 'Single bar composed of categorical segments summing to a whole',
+    props: [
+      'items: ProgressStackItem[]',
+      'height: number',
+      'aria-label: string',
+    ],
+  },
+  {
+    name: 'ProgressTrack',
+    status: 'released',
+    description: 'Base track primitive shared by linear, circular, and vertical indicators',
+    props: [
+      'variant: linear | circular | vertical',
+      'tone: ProgressTone',
+      'thickness: number',
+      'radius: number',
+      'children: ReactNode',
+    ],
+  },
+  {
     name: 'ConcentricRingProgress',
     status: 'coming-soon',
     description: 'Multi-layered radial progress rings for compact multi-metric dashboards',
@@ -89,7 +142,7 @@ const roadmapItems: ComponentRoadmap[] = [
   },
   {
     name: 'VerticalProgress',
-    status: 'planned',
+    status: 'in-progress',
     description: 'Vertical progress bar for space-constrained layouts',
     props: [
       'variant: determinate | indeterminate',
@@ -97,6 +150,20 @@ const roadmapItems: ComponentRoadmap[] = [
       'value: number (0-100)',
       'height: number | string',
       'showLabel: boolean',
+      'aria-label: string',
+    ],
+  },
+  {
+    name: 'BufferProgress',
+    status: 'planned',
+    description: 'Media-style progress bar showing played position over buffered ranges, with optional seek support',
+    props: [
+      'value: number (0-100)',
+      'buffered: BufferRange[] | number',
+      'size: sm | md | lg',
+      'seekable: boolean',
+      'onSeek: (value: number) => void',
+      'showTooltip: boolean',
       'aria-label: string',
     ],
   },
