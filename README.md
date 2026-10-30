@@ -11,7 +11,7 @@ A comprehensive React component library for displaying progress indicators with 
 - **Design Token Integration**: Uses `@asafarim/design-tokens` for consistent styling
 - **TypeScript Support**: Full type safety with exported interfaces
 - **Flexible Styling**: CSS Modules with customizable sizes, tones, and animations
-- **React 18+**: Built for modern React with hooks support
+- **React 18 and 19**: Built for modern React with hooks support; `react/jsx-runtime` is not bundled
 
 ## Installation
 
